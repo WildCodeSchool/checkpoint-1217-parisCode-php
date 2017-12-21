@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="snow">
+        <h1 id="merryChristMas">Merry Christmas !!!!</h1>
+        <h1 id="rtfm">Good Luck, and don't forget, R.T.F.M</h1>
+        <div class="snow__layer"><div class="snow__fall"></div></div>
+        <div class="snow__layer"><div class="snow__fall"></div></div>
+        <div class="snow__layer">
+            <div class="snow__fall"></div>
+            <div class="snow__fall">
+            </div>
+            <div class="snow__fall"></div>
+        </div>
+        <div class="snow__layer"><div class="snow__fall"></div></div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('dontTouch/css/style.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="{{ asset('dontTouch/js/main.js') }}"></script>
+{% endblock %}

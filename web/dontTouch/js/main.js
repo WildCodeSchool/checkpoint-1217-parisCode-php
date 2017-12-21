@@ -1,0 +1,1 @@
+$(document).ready(function(){var e=document.createElement("audio");e.setAttribute("src","dontTouch/sound/Merry-Chirstmas.mp3"),setTimeout(function(){$("#merryChristMas").fadeIn(2e3),e.play()},1800),setTimeout(function(){$("#rtfm").fadeIn(2e3)},8010)});
