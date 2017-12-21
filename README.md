@@ -51,6 +51,6 @@ Tu as déjà envoyé un mail avec Swift Mailer sur ton projet 2, qu'à cela ne t
 
 ### BONUS
 Tiptop la liste, mais mes lutins ont chacun une spécificité, si je pouvais avoir tes cadeaux triés par catégorie, ce serait génial...  
-L'idée est que lors de l'ajout d'un nouveau cadeau, tu puisses avoir le choix entre différentes catégories (j'ai vraiment une mauvaise organisation cette année, je ne connais pas encore bien mes lutins, il faudrait que l'on puisse crééer, editer, et voir les catégories)
+L'idée est que lors de l'ajout d'un nouveau cadeau, tu puisses avoir le choix entre différentes catégories (j'ai vraiment une mauvaise organisation cette année, je ne connais pas encore bien mes lutins, il faudrait que l'on puisse créer, éditer, et voir les catégories)
 
 # Good Luck
