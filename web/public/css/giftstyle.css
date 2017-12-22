@@ -1,0 +1,87 @@
+
+/** white box*/
+#box{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.ajouter{
+    float: right;
+
+}
+.row-titre-cat{
+    margin-bottom: 35px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*Nom categorie*/
+.categorie{
+    font-family: 'Berkshire Swash', cursive;
+    color:#C69627;
+    text-align: center;
+    padding: 0 !important;
+}
+
+.numero {
+    font-family: 'Berkshire Swash', cursive;
+    color:#C69627;
+    padding: 0 !important;
+}
+
+.name {
+    display: inline-block;
+}
+.Nomcadeau{
+    font-family: Poppins;
+    text-transform: uppercase;
+    color:black;
+    padding: 0 !important;
+
+}
+.giftname {
+    font-family: Poppins;
+    text-transform: uppercase;
+    color:#C69627;
+    text-align: left;
+    padding: 0 !important;
+}
+
+.idee {
+    font-family: 'Berkshire Swash', cursive;
+}
+
+/*traits dorés autour du nom de la categorie*/
+hr {
+    background-color: #C69627;
+    margin-top: 43px;
+    padding: 0 !important;
+    font-size: 20px;
+}
+
+h3 {
+    color:black;
+    padding: 0 !important;
+}
+
+.vignette_produit{
+    max-width: 50%;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+}
+
+.btn {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700; }
+
+.btn-primary {
+    background-color: #C69627;
+    border-color: #C69627; }
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+    background-color: #fec810 !important;
+    border-color: #fec810 !important;
+    color: white; }
+.btn-primary:active, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important; }

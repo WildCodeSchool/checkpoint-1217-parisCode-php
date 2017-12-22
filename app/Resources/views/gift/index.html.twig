@@ -6,45 +6,68 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Liste de cadeaux</h1>
+<div class="container"id="box">
+    <div class="row row-titre-cat">
+        <hr class="col-md-3">
+        <h1 class="col-md-6 col-xs-12 categorie">Liste des cadeaux pour Valériane</h1>
+        <hr class="col-md-3">
+    </div>
 
-    <table>
+    <div class="row row-produits">
+        <a href="{{ path('gift_new') }}" class="ajouter btn btn-primary btn-xl text-uppercase">Ajouter un cadeau à la liste</a>
+    </div>
+    {#<table>
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nom du cadeau</th>
-                <th>Pour te donner une idée...</th>
+                <h3>Pour te donner une idée en images...</h3>
                 <th>Un peu plus de détails</th>
-                <th>Prix estimé</th>
+                <h3>Prix estimé</h3>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
+        </thead>#}
+        {#<tbody>#}
+        <div class="row row-produits">
         {% for gift in gifts %}
-            <tr>
-                <td><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
-                <td>{{ gift.giftName }}</td>
-                <td><img src="{{ gift.giftPictureUrl }}" alt="{{ gift.giftName }}" class="vignette_produit" ></td>
-                <td>{{ gift.giftDescription }}</td>
-                <td>{{ gift.giftPrice }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('gift_show', { 'id': gift.id }) }}">Voir plus</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('gift_edit', { 'id': gift.id }) }}">Modifier</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            <div class="col-md-6">
+                            <div>
+                            <a href="{{ path('gift_show', { 'id': gift.id }) }}" class="numero">{{ gift.id }}</a>
+                            </div>
+                <div class="row name">
 
-    <ul>
-        <li>
-            <a href="{{ path('gift_new') }}">Ajouter un cadeau à la liste pour Florian</a>
-        </li>
-    </ul>
+                    <div class="col-md-12">
+                        <h3 class="giftname">{{ gift.giftName }}</h3>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="idee">Pour te donner une idée en images...</h4>
+                    <img src="{{ gift.giftPictureUrl }}" alt="{{ gift.giftName }}" class="vignette_produit">
+                </div>
+                <div class="col-md-12">
+                    <div>
+                        <h4>Un peu plus de détails</h4>
+                        <p>{{ gift.giftDescription }}</p>
+                    </div>
+                    <div>
+                        <h4>Prix estimé</h4>
+                        <p>{{ gift.giftPrice }}</p>
+                    </div>
+
+
+                <div>
+                    <a href="{{ path('gift_show', { 'id': gift.id }) }}" class="btn btn-primary text-uppercase">Voir plus</a>
+                    <a href="{{ path('gift_edit', { 'id': gift.id }) }}" class="btn btn-primary text-uppercase">Modifier</a>
+
+                    </ul>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+        </div>
+       {# </tbody>
+    </table>#}
+
+
+</div>
 {% endblock %}
