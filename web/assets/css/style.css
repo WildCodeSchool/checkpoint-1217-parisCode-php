@@ -1,0 +1,27 @@
+body{
+    background: url("https://media.giphy.com/media/9w475hDWEPVlu/giphy.gif");
+    background-size: cover;
+    font-size: 18px;
+    color: darkgreen;
+}
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+table{
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: auto;
+}
+
+td, th{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+li{
+    list-style: none;
+}

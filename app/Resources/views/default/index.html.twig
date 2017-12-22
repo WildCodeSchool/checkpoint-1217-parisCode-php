@@ -14,6 +14,9 @@
         </div>
         <div class="snow__layer"><div class="snow__fall"></div></div>
     </div>
+    {% for gift in gifts %}
+        {{ gift.giftName }}
+    {% endfor %}
 {% endblock %}
 
 {% block stylesheets %}
