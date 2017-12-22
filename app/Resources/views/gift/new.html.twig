@@ -13,4 +13,33 @@
             <a href="{{ path('gift_index') }}">Back to the list</a>
         </li>
     </ul>
+
+    <div class="container container_contact">
+        <div class="row row_contact">
+            <div class="col-md-offset-3 col-md-6 col_contact">
+                <h2 class="section_title">Ma liste au Père Noël</h2>
+
+                <p>Ho ho ho ! Si tu as été sage, envoie-moi ta liste !</p>
+
+                <form action="" method="post">
+
+                    <label for="giftName">Le nom de ton cadeau</label>
+                    <input required type="text" id="giftName" name="giftName" value="{% if errors.giftName is defined %} {{ errors.giftName }} {% endif %}">
+
+                    <label for="giftPictureUrl">Une photo du cadeau, ou ton plus beau dessin (JPG, PNG, GIF)</label>
+                    <input required type="file" id="giftPictureUrl" name="giftPictureUrl" value="{% if errors.giftPictureUrl is defined %} {{ errors.giftPictureUrl }} {% endif %}">
+
+                    <label for="giftDescription">Une description de ton cadeau, ce que tu voudrais faire avec</label>
+                    <textarea required type="text" id="giftDescription" name="gitfDescription" value="{% if errors.giftDescription is defined %} {{ errors.giftDescription }} {% endif %}"></textarea>
+
+                    <label for="giftPrice">Le prix de ton cadeau</label>
+                    <input required type="text" id="giftPrice" name="giftPrice" value="{% if errors.giftPrice is defined %} {{ errors.giftPrice}} {% endif %}">
+
+                    <button type="submit">Envoyer mon souhait !</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
 {% endblock %}
