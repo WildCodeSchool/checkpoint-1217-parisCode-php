@@ -4,9 +4,9 @@
 
     <div class="container-fluid">
 
-        <h1>Liste des cadeaux</h1>
+        <h1>Gifts list</h1>
 
-        <table id="example" class="display" cellspacing="0" width="100%">
+        <table>
             <thead>
             <tr>
                 <th>ID</th>
@@ -14,8 +14,7 @@
                 <th>Image</th>
                 <th>Description</th>
                 <th>Prix</th>
-                <th>Catégorie</th>
-                <th>Action</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -26,14 +25,14 @@
                     <td><img src="{{ gift.giftPictureUrl }}" alt="gift pic" class="gift-pic"></td>
                     <td>{{ gift.giftDescription }}</td>
                     <td>{{ gift.giftPrice }}</td>
-                    <td>{{ gift.category }}</td>
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('gift_show', { 'id': gift.id }) }}" class="btn btn-primary">show</a>
+                                <a href="{{ path('gift_show', { 'id': gift.id }) }}" class="btn btn-primary">Voir</a>
                             </li>
                             <li>
-                                <a href="{{ path('gift_edit', { 'id': gift.id }) }}" class="btn btn-warning">edit</a>
+                                <a href="{{ path('gift_edit', { 'id': gift.id }) }}"
+                                   class="btn btn-warning">Modifier</a>
                             </li>
                         </ul>
                     </td>
@@ -42,11 +41,11 @@
             </tbody>
         </table>
 
-        <a href="{{ path('gift_new') }}" class="btn btn-success">Créer un nouveau cadeau 🎁</a>
-
-        <a href="{{ path('category') }}" class="btn btn-primary">Gérer les catégories de cadeaux 💝</a>
-
-        <a href="{{ path('contact') }}" class="btn btn-info">Contacter le Père Noël 🎅</a>
+        <ul>
+            <li>
+                <a href="{{ path('gift_new') }}" class="btn btn-success">Créer un nouveau cadeau</a>
+            </li>
+        </ul>
 
     </div>
 
@@ -69,4 +68,3 @@
         });
     </script>
 {% endblock %}
-

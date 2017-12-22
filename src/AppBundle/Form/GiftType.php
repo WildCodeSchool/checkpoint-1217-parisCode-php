@@ -13,7 +13,7 @@ class GiftType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('giftName')->add('giftPictureUrl')->add('giftDescription')->add('giftPrice');
+        $builder->add('giftName')->add('giftPictureUrl')->add('giftDescription')->add('giftPrice')->add('category');
     }/**
      * {@inheritdoc}
      */
