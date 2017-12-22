@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Gifts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Giftname</th>
+                <th>Giftpictureurl</th>
+                <th>Giftdescription</th>
+                <th>Giftprice</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gift in gifts %}
+            <tr>
+                <td><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
+                <td>{{ gift.giftName }}</td>
+                <td><img class="img_cadeaux" src="{{ gift.giftPictureUrl }}"></td>
+                <td>{{ gift.giftDescription }}</td>
+                <td>{{ gift.giftPrice }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('gift_show', { 'id': gift.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('gift_edit', { 'id': gift.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('gift_new') }}">Create a new gift</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('eli_css/css/style2.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="{{ asset('dontTouch/js/main.js') }}"></script>
+{% endblock %}
