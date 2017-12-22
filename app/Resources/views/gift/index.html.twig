@@ -19,13 +19,16 @@
             <tr>
                 <td><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
                 <td>{{ gift.giftName }}</td>
-                <td><a href="{{ gift.giftPictureUrl }}"</td>
+                <td>{{ gift.giftPictureUrl }}</td>
                 <td>{{ gift.giftDescription }}</td>
                 <td>{{ gift.giftPrice }}</td>
                 <td>
                     <ul>
                         <li>
                             <a href="{{ path('gift_show', { 'id': gift.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('gift_edit', { 'id': gift.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -34,7 +37,11 @@
         </tbody>
     </table>
 
-    
+    <ul>
+        <li>
+            <a href="{{ path('gift_new') }}">Create a new gift</a>
+        </li>
+    </ul>
 {% endblock %}
 
 {% block stylesheets %}
@@ -48,4 +55,3 @@
             crossorigin="anonymous"></script>
     <script src="{{ asset('dontTouch/js/main.js') }}"></script>
 {% endblock %}
-
