@@ -15,7 +15,7 @@
 
                 <p>Ho ho ho ! Si tu as été sage, envoie-moi ta liste !</p>
 
-                <form action="" method="post">
+                <form action="{{ path('gift_show') }}" method="post">
                     <div>
                         <label for="giftName">Le nom de ton cadeau</label></br>
                         <input required type="text" id="giftName" name="giftName" value="{% if errors.giftName is defined %} {{ errors.giftName }} {% endif %}">

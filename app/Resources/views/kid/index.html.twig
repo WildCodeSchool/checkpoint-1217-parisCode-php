@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Kids list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Kidname</th>
+                <th>Kidemail</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for kid in kids %}
+            <tr>
+                <td><a href="{{ path('kid_show', { 'id': kid.id }) }}">{{ kid.id }}</a></td>
+                <td>{{ kid.kidName }}</td>
+                <td>{{ kid.kidEmail }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('kid_show', { 'id': kid.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('kid_edit', { 'id': kid.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('kid_new') }}">Create a new kid</a>
+        </li>
+    </ul>
+{% endblock %}

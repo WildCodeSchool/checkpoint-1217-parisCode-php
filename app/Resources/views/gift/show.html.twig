@@ -5,6 +5,8 @@
 
     <table>
         <tbody>
+
+        {% for gift in gifts %}
             <tr>
                 <th>Id</th>
                 <td>{{ gift.id }}</td>
@@ -26,6 +28,8 @@
                 <td>{{ gift.giftPrice }}</td>
             </tr>
         </tbody>
+
+        {% endif %}
     </table>
 
     <ul>

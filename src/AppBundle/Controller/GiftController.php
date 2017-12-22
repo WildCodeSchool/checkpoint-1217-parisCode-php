@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Gift;
+use AppBundle\Entity\Kid;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -47,6 +48,14 @@ class GiftController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($gift);
             $em->flush();
+
+            $mailer = new \Swift_Mailer($transport);
+
+            $message = (new \Swift_Message('Une nouvelle demande'))
+                ->setFrom([$email => $kidName])
+                ->setTo(['receiver@domain.org', 'other@domain.org' => 'Florian Grandjean'])
+                ->setBody($kidName. 'veut un cadeau ! Voici sa liste : <br>' . $giftName. '<br>'. $giftPictureUrl.'<br>'.$giftDescription.'<br>'.$giftPrice.'<br>Merci de lui répondre à : '.$kidEmail);
+
 
             return $this->redirectToRoute('gift_show', array('id' => $gift->getId()));
         }
