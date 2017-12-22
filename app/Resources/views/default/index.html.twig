@@ -1,29 +1,62 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="snow">
-        <h1 id="merryChristMas">Merry Christmas !!!!</h1>
-        <h1 id="rtfm">Good Luck, and don't forget, R.T.F.M</h1>
-        <div class="snow__layer"><div class="snow__fall"></div></div>
-        <div class="snow__layer"><div class="snow__fall"></div></div>
-        <div class="snow__layer">
-            <div class="snow__fall"></div>
-            <div class="snow__fall">
+
+    <h1>Christmas Gift List</h1>
+    <div class="container-fluid">
+            <p><a href="{{ path('gift_new') }}">New gift</a></p>
+            <p><a href="{{ path('category_new') }}">New category</a></p>
+            <p><a href="{{ path('go') }}">Send my list to Santa!</a></p>
+            <h2>My Gifts</h2>
+
+            <div class="row">
+            {% for gift in gifts %}
+                <div class="col-">
+                    <div class="card bg-light mx-2 my-2" style="max-width: 20rem;">
+                      <div class="card-header">{{ gift.giftName }}</div>
+                      <div class="card-body">
+                        <h4 class="card-title">{{ gift.giftPrice }} euros</h4>
+                        <p class="card-text">{{ gift.giftDescription }}</p>
+                        <img src="{{ gift.giftPictureUrl }}" height="200px" width="300px">
+                        <a href="{{ path('gift_show', {'id' : gift.id}) }}">More</a>
+                        <a href="{{ path('gift_edit', {'id' : gift.id}) }}">Update</a>
+                        <a href="{{ path('gift_delete', {'id' : gift.id}) }}">Delete</a>
+                      </div>
+                    </div>
+                </div>
+            {% endfor %}
             </div>
-            <div class="snow__fall"></div>
         </div>
-        <div class="snow__layer"><div class="snow__fall"></div></div>
+        <div class="col">
+            <h2>Categories</h2>
+            <div class="row">
+            {% for category in categories %}
+                <div class="col-">
+                    <div class="card bg-light mx-2 my-2" style="max-width: 20rem;">
+                      <div class="card-header">{{ category.categoryName }}</div>
+                      <div class="card-body">
+                        <p class="card-text">{{ category.categoryDescription }}</p>
+                        <img src="{{ category.categoryPictureUrl }}" height="200px" width="300px">
+                        <a href="{{ path('category_show', {'id' : category.id}) }}">More</a>
+                        <a href="{{ path('category_edit', {'id' : category.id}) }}">Update</a>
+                        <a href="{{ path('category_delete', {'id' : category.id}) }}">Delete</a>
+                      </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('dontTouch/css/style.css') }}">
+    {#<link rel="stylesheet" href="{{ asset('dontTouch/css/style.css') }}">#}
 {% endblock %}
 
 {% block javascripts %}
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
-    <script src="{{ asset('dontTouch/js/main.js') }}"></script>
+    {#<script#}
+            {#src="https://code.jquery.com/jquery-3.2.1.min.js"#}
+            {#integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="#}
+            {#crossorigin="anonymous"></script>#}
+    {#<script src="{{ asset('dontTouch/js/main.js') }}"></script>#}
 {% endblock %}

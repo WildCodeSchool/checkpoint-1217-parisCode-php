@@ -2,6 +2,7 @@
 
 ![Gif Noël](http://www.informatiquegifs.com/gifs/images/noel/88.gif)
 
+~~
 ## Fais ta liste au Père Noël !!!
 
 Noël approche, pour ça je ne t'apprends rien.  
@@ -50,6 +51,7 @@ Maintenant que tu peux créer ta liste au père Noël, ajoute y un peu de style.
 2. Quelques liens pour t'aider:
 	- http://symfony.com/doc/3.4/best_practices/web-assets.html
 	- [Noël Pictures](https://www.google.fr/search?q=noel&safe=active&client=firefox-b-ab&dcr=0&tbs=sur:fc&tbm=isch&source=lnt&sa=X&ved=0ahUKEwibl4SXrZvYAhVOEVAKHfb0AvUQpwUIHg&biw=1440&bih=720&dpr=1)
+
 
 ### 5. Sympa une belle liste, mais l'idée, c'est quand même que Santa la reçoive non ?
 ![haha](https://media.giphy.com/media/g4HNPdJHRX3O0/giphy.gif)  
