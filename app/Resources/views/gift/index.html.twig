@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {% stylesheets '../web/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+
+{% block body %}
+    <h1>Gifts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Giftname</th>
+                <th>Giftpictureurl</th>
+                <th>Giftdescription</th>
+                <th>Giftprice</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gift in gifts %}
+            <tr>
+                <td class="gift"><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
+                <td class="gift">{{ gift.giftName }}</td>
+                <td class="gift"><img src="{{ gift.giftPictureUrl }}" alt="{{ gift.giftName }}" class="groot" /></td>
+                <td class="gift">{{ gift.giftDescription }}</td>
+                <td class="gift">{{ gift.giftPrice }}</td>
+                <td class="actions">
+                    <ul>
+                        <li>
+                            <a href="{{ path('gift_show', { 'id': gift.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('gift_edit', { 'id': gift.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('gift_new') }}">Create a new gift</a>
+        </li>
+    </ul>
+{% endblock %}

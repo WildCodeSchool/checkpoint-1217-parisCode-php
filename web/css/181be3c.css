@@ -1,0 +1,31 @@
+body {
+    background-color: #e0e0e0;
+}
+
+
+.groot {
+    width: 250px;
+    height: 200px;
+}
+
+.gift, tr, th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.actions {
+    display: inline-block;
+    margin-top: 60px;
+}
+
+ul {
+    list-style:none;
+    margin-left:0;
+    padding-left:0;
+}
