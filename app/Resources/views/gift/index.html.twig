@@ -1,7 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('dontTouch/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('dontTouch/css/style2.css') }}">
+    <link rel="stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">"
+{% endblock %}
 
+{% block body %}
     <h1>Gifts list</h1>
 
     <table class="css">
@@ -16,11 +21,12 @@
             </tr>
         </thead>
         <tbody>
+
         {% for gift in gifts %}
             <tr>
                 <td><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
                 <td>{{ gift.giftName }}</td>
-                <td> <img src ="{{ gift.giftPictureUrl }}" class="pic"> </td>
+                <td> <img src="{{ gift.giftPictureUrl }}" class="pic"> </td>
                 <td>{{ gift.giftDescription }}</td>
                 <td>{{ gift.giftPrice }}</td>
                 <td>
@@ -44,11 +50,7 @@
         </li>
     </ul>
 {% endblock %}
-% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('dontTouch/css/style.css') }}">
-<link rel="stylesheet" href="{{ asset('dontTouch/css/style2.css') }}">
-<link rel="stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">"
-{% endblock %}
+
 {% block javascripts %}
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -56,5 +58,3 @@
             crossorigin="anonymous"></script>
     <script src="{{ asset('dontTouch/js/main.js') }}"></script>
 {% endblock %}
-
-
