@@ -1,12 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Gift creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
 
     <ul>
         <li>
@@ -22,20 +16,27 @@
                 <p>Ho ho ho ! Si tu as été sage, envoie-moi ta liste !</p>
 
                 <form action="" method="post">
+                    <div>
+                        <label for="giftName">Le nom de ton cadeau</label></br>
+                        <input required type="text" id="giftName" name="giftName" value="{% if errors.giftName is defined %} {{ errors.giftName }} {% endif %}">
+                    </div>
 
-                    <label for="giftName">Le nom de ton cadeau</label>
-                    <input required type="text" id="giftName" name="giftName" value="{% if errors.giftName is defined %} {{ errors.giftName }} {% endif %}">
+                    <div>
+                        <label for="giftPictureUrl">Une photo du cadeau, ou ton plus beau dessin (JPG, PNG, GIF)</label></br>
+                        <input required type="file" id="giftPictureUrl" name="giftPictureUrl" value="{% if errors.giftPictureUrl is defined %} {{ errors.giftPictureUrl }} {% endif %}">
+                    </div>
 
-                    <label for="giftPictureUrl">Une photo du cadeau, ou ton plus beau dessin (JPG, PNG, GIF)</label>
-                    <input required type="file" id="giftPictureUrl" name="giftPictureUrl" value="{% if errors.giftPictureUrl is defined %} {{ errors.giftPictureUrl }} {% endif %}">
+                    <div>
+                        <label for="giftDescription">Une description de ton cadeau, ce que tu voudrais faire avec</label></br>
+                        <textarea required type="text" id="giftDescription" name="gitfDescription" value="{% if errors.giftDescription is defined %} {{ errors.giftDescription }} {% endif %}"></textarea>
+                    </div>
 
-                    <label for="giftDescription">Une description de ton cadeau, ce que tu voudrais faire avec</label>
-                    <textarea required type="text" id="giftDescription" name="gitfDescription" value="{% if errors.giftDescription is defined %} {{ errors.giftDescription }} {% endif %}"></textarea>
+                    <div>
+                        <label for="giftPrice">Le prix de ton cadeau</label></br>
+                        <input required type="text" id="giftPrice" name="giftPrice" value="{% if errors.giftPrice is defined %} {{ errors.giftPrice}} {% endif %}">
+                    </div>
 
-                    <label for="giftPrice">Le prix de ton cadeau</label>
-                    <input required type="text" id="giftPrice" name="giftPrice" value="{% if errors.giftPrice is defined %} {{ errors.giftPrice}} {% endif %}">
-
-                    <button type="submit">Envoyer mon souhait !</button>
+                    <button type="submit" class="btn btn-danger">Envoyer mon souhait !</button>
 
                 </form>
             </div>
