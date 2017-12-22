@@ -1,0 +1,8 @@
+.pic{
+     width: 200px;
+    height : 200px;
+}
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background-image: url("https://static.pexels.com/photos/383646/pexels-photo-383646.jpeg");
+}
