@@ -24,12 +24,12 @@
         <tbody>
         {% for gift in gifts %}
             <tr>
-                <td><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
-                <td>{{ gift.giftName }}</td>
-                <td><img src="{{ gift.giftPictureUrl }}" alt="{{ gift.giftName }}" style="width: 300px; height: 200px" /></td>
-                <td>{{ gift.giftDescription }}</td>
-                <td>{{ gift.giftPrice }}</td>
-                <td>
+                <td class="gift"><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
+                <td class="gift">{{ gift.giftName }}</td>
+                <td class="gift"><img src="{{ gift.giftPictureUrl }}" alt="{{ gift.giftName }}" class="groot" /></td>
+                <td class="gift">{{ gift.giftDescription }}</td>
+                <td class="gift">{{ gift.giftPrice }}</td>
+                <td class="actions">
                     <ul>
                         <li>
                             <a href="{{ path('gift_show', { 'id': gift.id }) }}">show</a>

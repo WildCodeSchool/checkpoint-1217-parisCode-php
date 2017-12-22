@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {% stylesheets '../web/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
 {% block body %}
     <h1>Gift</h1>
 
@@ -15,7 +21,7 @@
             </tr>
             <tr>
                 <th>Giftpictureurl</th>
-                <td>{{ gift.giftPictureUrl }}</td>
+                <td class="gift"><img src="{{ gift.giftPictureUrl }}" alt="{{ gift.giftName }}" class="groot" /></td>
             </tr>
             <tr>
                 <th>Giftdescription</th>
