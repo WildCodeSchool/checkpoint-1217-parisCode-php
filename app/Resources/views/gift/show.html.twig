@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container-fluid">
+
+        <h1>Cadeau</h1>
+
+        <table>
+            <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ gift.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ gift.giftName }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ gift.giftPictureUrl }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ gift.giftDescription }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ gift.giftPrice }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('gift_index') }}">Retour à la liste</a>
+            </li>
+            <li>
+                <a href="{{ path('gift_edit', { 'id': gift.id }) }}">Modifier le cadeau</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-danger">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('yesTouch/css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable(
+                {}
+            );
+        });
+    </script>
+{% endblock %}
+

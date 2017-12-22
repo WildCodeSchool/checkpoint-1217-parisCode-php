@@ -1,0 +1,20 @@
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background-image: url("https://static.pexels.com/photos/286198/pexels-photo-286198.jpeg");
+    background-repeat: no-repeat, repeat;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1 {
+}
+
+.gift-pic {
+    width: 100px;
+}
+
+.btn {
+    margin: 1em;
+}

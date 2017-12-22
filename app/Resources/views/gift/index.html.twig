@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container-fluid">
+
+        <h1>Liste des cadeaux</h1>
+
+        <table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Catégorie</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for gift in gifts %}
+                <tr>
+                    <td><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
+                    <td>{{ gift.giftName }}</td>
+                    <td><img src="{{ gift.giftPictureUrl }}" alt="gift pic" class="gift-pic"></td>
+                    <td>{{ gift.giftDescription }}</td>
+                    <td>{{ gift.giftPrice }}</td>
+                    <td>{{ gift.category }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('gift_show', { 'id': gift.id }) }}" class="btn btn-primary">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('gift_edit', { 'id': gift.id }) }}" class="btn btn-warning">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('gift_new') }}" class="btn btn-success">Créer un nouveau cadeau 🎁</a>
+
+        <a href="{{ path('category') }}" class="btn btn-primary">Gérer les catégories de cadeaux 💝</a>
+
+        <a href="{{ path('contact') }}" class="btn btn-info">Contacter le Père Noël 🎅</a>
+
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('yesTouch/css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/r-2.2.0/datatables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable(
+                {}
+            );
+        });
+    </script>
+{% endblock %}
+
