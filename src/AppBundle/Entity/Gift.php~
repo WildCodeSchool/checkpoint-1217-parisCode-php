@@ -162,28 +162,5 @@ class Gift
     {
         return $this->giftPrice;
     }
-
-    /**
-     * Set kid
-     *
-     * @param \AppBundle\Entity\Kid $kid
-     *
-     * @return Gift
-     */
-    public function setKid(\AppBundle\Entity\Kid $kid = null)
-    {
-        $this->kid = $kid;
-
-        return $this;
-    }
-
-    /**
-     * Get kid
-     *
-     * @return \AppBundle\Entity\Kid
-     */
-    public function getKid()
-    {
-        return $this->kid;
-    }
 }
+

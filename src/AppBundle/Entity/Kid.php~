@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\Gift;
 
 /**
  * Kid
@@ -103,45 +102,5 @@ class Kid
     {
         return $this->kidEmail;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->gifts = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add gift
-     *
-     * @param \AppBundle\Entity\Gift $gift
-     *
-     * @return Kid
-     */
-    public function addGift(\AppBundle\Entity\Gift $gift)
-    {
-        $this->gifts[] = $gift;
-
-        return $this;
-    }
-
-    /**
-     * Remove gift
-     *
-     * @param \AppBundle\Entity\Gift $gift
-     */
-    public function removeGift(\AppBundle\Entity\Gift $gift)
-    {
-        $this->gifts->removeElement($gift);
-    }
-
-    /**
-     * Get gifts
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getGifts()
-    {
-        return $this->gifts;
-    }
 }
+
