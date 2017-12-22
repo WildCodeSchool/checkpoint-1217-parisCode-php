@@ -15,7 +15,17 @@
 
                 <p>Ho ho ho ! Si tu as été sage, envoie-moi ta liste !</p>
 
-                <form action="{{ path('gift_show') }}" method="post">
+                <form action="{{ path('gift_index') }}" method="post">
+                    <div>
+                        <label for="kidEmail">L'adresse email de tes parents</label></br>
+                        <input required type="text" id="kidEmail" name="kidEmail" value="{% if errors.kidEmail is defined %} {{ errors.kidEmail }} {% endif %}">
+                    </div>
+
+                    <div>
+                        <label for="kidName">Ton joli petit nom</label></br>
+                        <input required type="text" id="kidName" name="kidName" value="{% if errors.kidName is defined %} {{ errors.kidName }} {% endif %}">
+                    </div>
+
                     <div>
                         <label for="giftName">Le nom de ton cadeau</label></br>
                         <input required type="text" id="giftName" name="giftName" value="{% if errors.giftName is defined %} {{ errors.giftName }} {% endif %}">
