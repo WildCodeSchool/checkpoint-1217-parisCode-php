@@ -1,0 +1,51 @@
+body {
+    background-image: url("http://www.publicdomainpictures.net/pictures/10000/velka/1-1258560569rlU0.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+tbody {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+td {
+    border: 1px solid black;
+    padding: 0.5em;
+}
+
+td img {
+    width: 10vw;
+}
+
+.right-align {
+    text-align: right;
+}
+
+label {
+    display: block;
+    margin-top: 1em;
+}
+
+input {
+    width: 20%;
+}
+
+#appbundle_gift {
+    margin-bottom: 2em!important;
+}
+
+textarea {
+    width: 20%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}

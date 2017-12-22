@@ -5,23 +5,23 @@
 
     <table>
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Giftname</th>
-                <th>Giftpictureurl</th>
-                <th>Giftdescription</th>
-                <th>Giftprice</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Giftname</th>
+            <th>Giftpictureurl</th>
+            <th>Giftdescription</th>
+            <th>Giftprice</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for gift in gifts %}
             <tr>
                 <td><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
                 <td>{{ gift.giftName }}</td>
-                <td>{{ gift.giftPictureUrl }}</td>
+                <td><img src="{{ gift.giftPictureUrl }}"></td>
                 <td>{{ gift.giftDescription }}</td>
-                <td>{{ gift.giftPrice }}</td>
+                <td class="right-align">{{ gift.giftPrice }}</td>
                 <td>
                     <ul>
                         <li>
@@ -43,3 +43,13 @@
         </li>
     </ul>
 {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('css/snowstorm.js') }}"></script>
+{% endblock %}
+
+

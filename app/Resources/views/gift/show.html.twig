@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <th>Giftpictureurl</th>
-                <td>{{ gift.giftPictureUrl }}</td>
+                <td><img src="{{ gift.giftPictureUrl }}"></td>
             </tr>
             <tr>
                 <th>Giftdescription</th>
@@ -41,4 +41,12 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('css/snowstorm.js') }}"></script>
 {% endblock %}
