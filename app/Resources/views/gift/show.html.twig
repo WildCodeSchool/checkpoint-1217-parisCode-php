@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Gift</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ gift.id }}</td>
+            </tr>
+            <tr>
+                <th>Giftname</th>
+                <td>{{ gift.giftName }}</td>
+            </tr>
+            <tr>
+                <th>Giftpictureurl</th>
+                <td>{{ gift.giftPictureURL }}</td>
+            </tr>
+            <tr>
+                <th>Giftdescription</th>
+                <td>{{ gift.giftDescription }}</td>
+            </tr>
+            <tr>
+                <th>Giftprice</th>
+                <td>{{ gift.giftPrice }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('gift_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('gift_edit', { 'id': gift.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
