@@ -38,4 +38,4 @@ monolog:
         #    level: info
 
 swiftmailer:
-    delivery_addresses: ['britneyfrite@gmail.com']
+    delivery_addresses: ['florianpdf@gmail.com']

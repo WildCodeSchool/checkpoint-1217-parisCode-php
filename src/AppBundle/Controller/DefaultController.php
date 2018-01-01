@@ -47,32 +47,30 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/", name="contact")
+     * @Route("/mail")
      */
-    public function contactAction()
+    public function mailAction()
     {
-        return $this->render('default/contact.html.twig');
-    }
+        $em = $this->getDoctrine()->getManager();
 
-    /**
-     * @Route("/", name="sendmail")
-     */
-/*    public function sendMail($name, \Swift_Mailer $mailer)
-    {
-        $message = (new \Swift_Message('Merry Christmas'))
-            ->setFrom('douceurvegetale@mail.fr')
+        $gifts = $em->getRepository('AppBundle:Gift')->findAll();
+        $message = \Swift_Message::newInstance()
+            ->setSubject('Cher Père Noël')
+            ->setFrom('emelineancelpirouelle@gmail.com')
             ->setTo('florianpdf@gmail.com')
             ->setBody(
                 $this->renderView(
-                // app/Resources/views/Emails/registration.html.twig
-                    'default/registration.html.twig',
-                    array('name' => $name)
+                    'gift/index.html.twig',
+                    array('gifts' => $gifts)
                 ),
                 'text/html'
-            );
+            )
 
-        $mailer->send($message);
+        ;
+        $this->get('mailer')->send($message);
 
-        return $this->render('default/index.html.twig');
-    }*/
+        return $this->render('gift/index.html.twig', array(
+            'gifts' => $gifts,
+        ));
+    }
 }

@@ -4,7 +4,7 @@
 
     <div class="container-fluid">
 
-        <h1>Gifts list</h1>
+        <h1>Liste des cadeaux</h1>
 
         <table>
             <thead>
@@ -14,6 +14,7 @@
                 <th>Image</th>
                 <th>Description</th>
                 <th>Prix</th>
+                <th>Catégorie</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -22,9 +23,10 @@
                 <tr>
                     <td><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
                     <td>{{ gift.giftName }}</td>
-                    <td><img src="{{ gift.giftPictureUrl }}" alt="gift pic" class="gift-pic"></td>
+                    <td><img width="100px" src="{{ gift.giftPictureUrl }}" alt="gift pic" class="gift-pic"></td>
                     <td>{{ gift.giftDescription }}</td>
                     <td>{{ gift.giftPrice }}</td>
+                    <td>{{ gift.category }}</td>
                     <td>
                         <ul>
                             <li>
