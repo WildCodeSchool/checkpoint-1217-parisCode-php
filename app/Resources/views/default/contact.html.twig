@@ -10,23 +10,18 @@
         <h1>Christmas Gift List</h1>
         <div class="container-fluid">
             <div class="col">
-                <a href="{{ path('gift_new') }}">New gift</a>
-                <a href="{{ path('category_new') }}">New category</a>
-                <a href="{{ path('go') }}">Send my list to Santa!</a>
-                <h2>My Gifts</h2>
+                <h2>My Wishlist</h2>
                 {% for gift in gifts %}
                     <div class="card bg-light mb-3" style="max-width: 20rem;">
                       <div class="card-header">{{ gift.giftName }}</div>
                       <div class="card-body">
                         <h4 class="card-title">{{ gift.giftPrice }} euros</h4>
-                        <p class="card-text">{{ gift.giftDescription }}</p>
                         <img src="{{ gift.giftPictureUrl }}" height="200px" width="300px">
-                        <a href="{{ path('gift_show', {'id' : gift.id}) }}">More</a>
-                        <a href="{{ path('gift_edit', {'id' : gift.id}) }}">Update</a>
-                        <a href="{{ path('gift_delete', {'id' : gift.id}) }}">Delete</a>
                       </div>
                     </div>
                 {% endfor %}
+                <p>Thanks Santa!</p>
+                <p>Hélène</p>
             </div>
         </div>
     </body>

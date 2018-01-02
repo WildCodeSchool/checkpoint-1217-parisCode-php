@@ -32,11 +32,12 @@ class DefaultController extends Controller
 
         $gifts = $em->getRepository('AppBundle:Gift')->findAll();
 
-        $message = \Swift_Message::newInstance()
+        $message = (new \Swift_Message())
             ->setSubject('Yo Santa!')
-            ->setFrom('contact.volupt@gmail.com')
-            ->setTo('helene.telliez@gmail.com')
-            ->setBody($this->renderView('default/contact.html.twig',array(
+            ->setFrom($this->getParameter('mailer_user'))
+            ->setTo('florian.pdf@gmail.com')
+            ->setCc('helene.telliez@gmail.com')
+            ->setBody($this->renderView('default/contact.html.twig', array(
                 'gifts' => $gifts
             )),'text/html');
 
