@@ -3,14 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+
+        {% block stylesheets %}
+        {% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('dontTouch/pictures/favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+
+
+        {% endblock %}
         {% block javascripts %}{% endblock %}
-        <audio loop autoplay>
-            <source src="{{ asset('dontTouch/sound/Jingle-bells-Version2.mp3') }}" type="audio/mp3">
-        </audio>
+
     </body>
 </html>
