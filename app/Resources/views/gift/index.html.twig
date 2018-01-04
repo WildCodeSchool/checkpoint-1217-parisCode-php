@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+
+    <div class="container">
+        <br> <br>
+        <h1>Gifts list</h1>
+        <table class="table table-hover">
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Id</th>
+                <th scope="col">Giftname</th>
+                <th scope="col">Giftpictureurl</th>
+                <th scope="col">Giftdescription</th>
+                <th scope="col">Giftprice</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gift in gifts %}
+            <tr>
+                <td><a href="{{ path('gift_show', { 'id': gift.id }) }}">{{ gift.id }}</a></td>
+                <td>{{ gift.giftName }}</td>
+                <td>{{ gift.giftPictureUrl }}</td>
+                <td>{{ gift.giftDescription }}</td>
+                <td>{{ gift.giftPrice }}</td>
+                <td>
+                            <a href="{{ path('gift_show', { 'id': gift.id }) }}" class="btn btn-link">show</a>
+
+                            <a href="{{ path('gift_edit', { 'id': gift.id }) }}" class="btn btn-link">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+            <a href="{{ path('gift_new') }}" class="btn btn-primary">Create new gift</a>
+            <a href="{{ path ('sendGift') }}" class="btn btn-primary" >Envoyer mail</a>
+
+
+    </div>
+{% endblock %}
+
+
+
